@@ -1,0 +1,92 @@
+#user{
+	id,
+	name,
+	email,
+	id_role,
+	phone,
+}
+
+#gallery{
+	id,
+	img,
+	title,
+	text
+	id_user,
+	date,
+}
+
+#slider{
+	id,
+	title,
+	text,
+	img,
+}
+
+#product{
+	id,
+	price,
+	title,
+	description,
+	id_user,
+	date,
+}
+#pr_images{
+	id,
+	img,
+	id_product,
+}
+#mentors{
+	id,
+	first_name,
+	last_name,
+	telegram,
+	instagram,
+	img,
+	text,
+	job,
+}
+#comment{
+	id,
+	comment(type => text),
+	id_image,
+	id_user,
+}
+
+#role{
+	id,
+	role,
+}
+
+#posts{
+	id,
+	text,
+	title,
+	id_user,
+	img,
+}
+
+#team{
+	id,
+	full_name,
+	job,
+	description,
+	phone,
+	email,
+	telegram,(nullable)
+	instagram,(nullable)
+	img,
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
