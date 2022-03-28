@@ -58,30 +58,40 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
 
-        $validatior = $request->validate([
+        $validator = $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
             'img' => 'required|image|mimes:jpg,png,jpeg',
+            'file' => 'required|mimes:pdf,docx',
             'made' => 'required|date',
             'id_category' => 'required|integer',
             'author' => 'required|string',
         ]);
+        // return 'wdxwce';
+
+        $file_name = $validator['file']->getClientOriginalName();
+        $file_new_name = time().'_'.$file_name;
+        $path = public_path('assets/books/');
+        $file_url = asset('assets/books/'.$file_new_name);
+        $validator['file']->move($path,$file_new_name);
 
         $book = Book::create([
-            'name' => $validatior['name'],
-            'description' => $validatior['description'],
-            'made' =>$validatior['made'],
-            'id_category' =>$validatior['id_category'],
-            'author' => $validatior['author'],
+            'name' => $validator['name'],
+            'description' => $validator['description'],
+            'made' =>$validator['made'],
+            'id_category' =>$validator['id_category'],
+            'author' => $validator['author'],
+            'file' => $file_url
         ]);
 
-        // return $book;
 
-        $img_name = $validatior['img']->getClientOriginalName();
+
+        $img_name = $validator['img']->getClientOriginalName();
         $img_new_name = time().'_'.$img_name;
         $img_url = asset('assets/img/book/'.$img_new_name);
-        $validatior['img']->move('assets/img/book/',$img_new_name);
+        $validator['img']->move('assets/img/book/',$img_new_name);
         $book_img = BookImg::create([
             'id_book' => $book->id,
             'img' =>$img_url
@@ -135,7 +145,6 @@ class BooksController extends Controller
     {
         $book = Book::find($id);
         $book_img = BookImg::where('id_book',$id)->get();
-        // return $book_img[0]->img;
         $img = $book_img[0]->img;
         unlink(public_path(explode(URL::to('/'), $img)[1]));
         $book->delete();

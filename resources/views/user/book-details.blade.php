@@ -29,6 +29,7 @@
               <li><strong>Avtor</strong>: {{ $book->author }}</li>
               <li><strong>Jazilg`an sa`ne </strong>: {{ $book->made }}</li>
               <li><strong>Kategorya</strong>: {{ $book->category }}</li>
+              <li><a class="btn btn-primary" href={{ asset($book->file) }}>Juklep Aliw</a></li>
             </ul>
           </div>
           <div class="portfolio-description">

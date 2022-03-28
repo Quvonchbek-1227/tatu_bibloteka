@@ -21,7 +21,14 @@
 									<li>{{ $blog->content }}</li>
 								</ul>
 							</div>
-							<a href="{{ route('blog.destroy',['blog'=>$blog->id]) }}" class="btn btn-primary">O`chirish.</a>
+							<div class="card-footer d-flex justify-content-between">
+								<form method="post" action="{{ route('blog.destroy',['blog'=>$blog->id]) }}">
+									@csrf
+									@method('DELETE')
+									<button type="submit" class="btn btn-danger">O`chirish</button>
+								</form>
+								<a class="btn btn-primary" href="{{ route('blog.edit',['blog'=>$blog->id]) }}">Taxrirlash</a>
+							</div>
 						</div>
 	</div>
 

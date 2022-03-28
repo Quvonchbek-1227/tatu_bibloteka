@@ -21,7 +21,7 @@ class CreateBooks extends Migration
             $table->date('made');
             $table->text('description');
             $table->timestamps();
-
+            $table->string('file');
 
             $table->foreign('id_category')->references('id')->on('book_categories')
             ->onDelete('cascade');

@@ -43,7 +43,7 @@
               <div class="entry-meta">
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>
-                    <a href="blog-single.html">
+                    <a href="#">
                       Admin
                     </a>
                   </li>
@@ -94,9 +94,30 @@
           </div><!-- End blog entries list -->
 
           <div class="col-lg-4">
+             <div class="sidebar">
 
-            @include('layouts.blog-sidebar')
+              <h3 class="sidebar-title">Izlew</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
 
+              <h3 class="sidebar-title">En` Song`i Postlar</h3>
+              <div class="sidebar-item recent-posts">
+
+                @foreach($blogs as $blog)
+                  <div class="post-item clearfix">
+                    <img src="{{ $blog->img }}" alt="">
+                    <h4><a href="{{ route('news-single',['id' => $blog->id]) }}">{{ $blog->title }}</a></h4>
+                    <time datetime="2020-01-01">{{ $blog->date }}</time>
+                  </div>
+                @endforeach
+
+              </div><!-- End sidebar recent posts-->
+
+            </div><!-- End sidebar -->
           </div><!-- End blog sidebar -->
 
         </div>

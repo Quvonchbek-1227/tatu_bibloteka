@@ -84,7 +84,7 @@
                 <div class="portfolio-wrap">
                   <img src="{{ $book->img }}" class="img-fluid" alt="">
                   <div class="portfolio-info">
-                    <h4>{{ $book->book_desc }}</h4>
+                    <h4>{{ Str::limit($book->book_desc,20) }}</h4>
                     <div class="portfolio-links">
                       <a href="{{ $book->img }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $book->name }}"><i class="bx bx-plus"></i></a>
                       <a href="{{ route('book.show',['id' => $book->id_book]) }}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>

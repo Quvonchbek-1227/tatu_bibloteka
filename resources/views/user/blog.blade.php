@@ -36,7 +36,7 @@
                 </div>
 
                 <h2 class="entry-title">
-                  <a href="blog-single.html">{{ $blog->title }}</a>
+                  <a href="{{ route('news-single',['id' => $blog->id]) }}">{{ $blog->title }}</a>
                 </h2>
 
                 <div class="entry-meta">
@@ -49,7 +49,7 @@
 
                 <div class="entry-content">
                   <p>
-                    {{ $blog->content }}
+                    {{ Str::limit($blog->content,255) }}
                   </p>
                   <div class="read-more">
                     <a href="{{ route('news-single',['id' => $blog->id]) }}">Toliq Oqiw</a>
@@ -67,7 +67,30 @@
           </div><!-- End blog entries list -->
 
           <div class="col-lg-4">
-            @include('layouts.blog-sidebar')
+             <div class="sidebar">
+
+              <h3 class="sidebar-title">Izlew</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+
+              <h3 class="sidebar-title">En` Song`i Postlar</h3>
+              <div class="sidebar-item recent-posts">
+
+                @foreach($blogs as $blog)
+                  <div class="post-item clearfix">
+                    <img src="{{ $blog->img }}" alt="">
+                    <h4><a href="{{ route('news-single',['id' => $blog->id]) }}">{{ $blog->title }}</a></h4>
+                    <time datetime="2020-01-01">{{ $blog->date }}</time>
+                  </div>
+                @endforeach
+
+              </div><!-- End sidebar recent posts-->
+
+            </div><!-- End sidebar -->
           </div><!-- End blog sidebar -->
 
         </div>

@@ -62,6 +62,12 @@
                                 <input type="file" class="form-control" name="img">
                             </div>
                         </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="form-label">Kitobni pdf word fayilini yuklang.</label>
+                                <input type="file" class="form-control" name="file">
+                            </div>
+                        </div>
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="form-label">Kitob haqida qo`shimcha.</label>

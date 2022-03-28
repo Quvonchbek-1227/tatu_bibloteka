@@ -101,11 +101,9 @@
                   </form>
               </div>
             </li>
-            @if(Auth::user()->role_id == 2)
-              <li>
-                <a href="{{ route('admin.home') }}" class="">@lang('words.admin_panel')</a>
-              </li>
-            @endif
+                <li>
+                  <a href="{{ route('login-admin') }}" class="">@lang('words.admin_panel')</a>
+                </li>
           @endguest
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

@@ -14,13 +14,18 @@ class BlogController extends Controller
         return view('user.blog',[
             'blogs' => $blogs
         ]);
+
     }
 
     public function show($id){
+
         $blog = Blog::find($id);
-        // return $blog;
+        $blogs = Blog::paginate(7);
+
+
         return view('user.blog-single',[
-            'blog' => $blog
+            'blog' => $blog,
+            'blogs' => $blogs
         ]);
     }
 }

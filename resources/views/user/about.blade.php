@@ -20,6 +20,11 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
+    <div class="container">
+      <div>
+        <img class="img-fluid" src="{{ asset('assets/img/tatunf.jpg') }}">
+      </div>
+    </div>
 
     <!-- ======= About Section ======= -->
     @include('layouts.aboutSection')
