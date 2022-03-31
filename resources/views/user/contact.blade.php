@@ -79,6 +79,9 @@
                 <div class="form-group mt-3">
                   <textarea class="form-control" name="message" rows="5" placeholder="Xabardi Jazin`"></textarea>
                 </div>
+                @isset($sucess)
+                  <h4>{{ $sucess }}</h4>
+                @endisset
                 <input type="submit" value="Xabardi Jiberiw" class="btn btn-primary py-3 px-5 mt-5">
 
               </form>

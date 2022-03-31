@@ -14,6 +14,7 @@ class RoleFactory extends Factory
      * @return array
      */
     protected $model = Role::class; 
+    
     public function definition()
     {
         return [

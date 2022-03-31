@@ -57,6 +57,7 @@
           <li><a href="/" class="active">Bas Bet</a></li>
 
           <li class="dropdown"><a href="{{ route('about') }}"><span>Sayt Haqqinda</span> <i class="bi bi-chevron-down."></i></a>
+            <li class="dropdown"><a href="{{ route('about') }}"><span>Barliq Kitaplar</span> <i class="bi bi-chevron-down."></i></a>
             <!-- <ul>
               <li><a href="/about">@lang('words.about')</a></li>
               <li><a href="/team">@lang('words.team')</a></li>

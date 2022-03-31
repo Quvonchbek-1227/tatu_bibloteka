@@ -69,12 +69,12 @@
 	<script src="/admin/js/custom.min.js"></script>
 		
     <!-- Chart Morris plugin files -->
-    <script src="/admin/vendor/raphael/raphael.min.js"></script>
-    <script src="/admin/vendor/morris/morris.min.js"></script>
+    <!-- <script src="/admin/vendor/raphael/raphael.min.js"></script>
+    <script src="/admin/vendor/morris/morris.min.js"></script> -->
 		
 	
 	<!-- Chart piety plugin files -->
-    <script src="/admin/vendor/peity/jquery.peity.min.js"></script>
+    <!-- <script src="/admin/vendor/peity/jquery.peity.min.js"></script> -->
 	
 		<!-- Demo scripts -->
     <script src="/admin/js/dashboard/dashboard-2.js"></script>
@@ -88,7 +88,14 @@
     <script src="/admin/vendor/summernote/js/summernote.min.js"></script>
     <!-- Summernote init -->
     <script src="/admin/js/plugins-init/summernote-init.js"></script>
-
+    <script type="text/javascript">
+        $('.open-edit-user').click(function(){
+            $('.edit-user').toggle();
+        });
+        $('.open-add-role').click(function(){
+            $('.add-role').toggle();
+        });
+    </script>
 		
 	
 </body>

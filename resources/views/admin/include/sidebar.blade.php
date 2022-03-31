@@ -34,6 +34,16 @@
                     <li><a href="{{ route('category.create') }}">Kategoriya Qo`shish</a></li>
                 </ul>
             </li>
+            <li><a class="has-arrow" href="{{ route('all_messages') }}" aria-expanded="false">
+                    <i class="la fab-fa-telegram"></i>
+                    <span class="nav-text">Murojatlar</span>
+                </a>
+            </li>
+            <li><a class="has-arrow" href="#" aria-expanded="false">
+                    <i class="la fab-fa-telegram"></i>
+                    <span class="nav-text">Accountni Boshqarish</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

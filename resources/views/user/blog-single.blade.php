@@ -98,9 +98,12 @@
 
               <h3 class="sidebar-title">Izlew</h3>
               <div class="sidebar-item search-form">
-                <form action="">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
+                <form action="{{ route('search-news') }}" method="POST">
+                  @csrf
+                  <input type="text" name="str" placeholder="Jan`aliq izlew...">
+                  <button type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
                 </form>
               </div><!-- End sidebar search formn-->
 

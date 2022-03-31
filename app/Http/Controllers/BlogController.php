@@ -28,4 +28,27 @@ class BlogController extends Controller
             'blogs' => $blogs
         ]);
     }
+
+    public function search(Request $request){
+
+        $validator = $request->validate([
+            'str' => 'required|string|max:10'
+        ]);
+
+        $blogs = Blog::all();
+        $str = strtolower($validator['str']);
+        $result_blogs = array();
+        $test = array();
+
+        for ($i=0; $i < count($blogs) ; $i++) {
+            $id = strpos(strtolower($blogs[$i]->title), $str);
+            array_push($test,$id);
+            if (is_int($id)) {
+                array_push($result_blogs, $blogs[$i]);
+            }
+        }
+        
+        return view('user.searcher',['blogs' => $result_blogs]);
+
+    }
 }

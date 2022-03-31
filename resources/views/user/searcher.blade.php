@@ -9,7 +9,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Jan`aliqlar</h2>
+          <h2>Na`tijeler</h2>
           <ol>
             <li><a href="/">Bas Bet</a></li>
             <li>Jan`aliqlar</li>
@@ -59,10 +59,6 @@
               </article><!-- End blog entry -->
 
             @endforeach
-
-            <div class="blog-pagination">
-              {!! $blogs->links() !!}
-            </div>
 
           </div><!-- End blog entries list -->
 
