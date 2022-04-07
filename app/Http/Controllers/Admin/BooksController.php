@@ -47,6 +47,8 @@ class BooksController extends Controller
             return view('admin.create.create_book',[
                 'categs' => $categs
             ]);
+        }else{
+            return view('admin.create.create_category')->with('message','Oldin kitob uchun kategorya qo`shing!');
         }
     }
 
@@ -58,7 +60,6 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
 
         $validator = $request->validate([
             'name' => 'required|string',
@@ -69,7 +70,6 @@ class BooksController extends Controller
             'id_category' => 'required|integer',
             'author' => 'required|string',
         ]);
-        // return 'wdxwce';
 
         $file_name = $validator['file']->getClientOriginalName();
         $file_new_name = time().'_'.$file_name;
