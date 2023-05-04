@@ -5,14 +5,20 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AdminPassword;
+use App\Models\Book;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin.home');
+        $books = Book::all();
+        $countof_book =  count($books);
+        return view('admin.home',[
+            "count_book" => $countof_book
+        ]);
     }
 
     public function check_admin(Request $request){

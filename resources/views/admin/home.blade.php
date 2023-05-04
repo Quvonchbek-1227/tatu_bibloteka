@@ -6,8 +6,8 @@
             <div class="col-xl-6 col-xxl-6 col-sm-6">
                 <div class="widget-stat card">
                     <div class="card-body">
-                        <h4 class="card-title">Total Students</h4>
-                        <h3>3280</h3>
+                        <h4 class="card-title">Barcha Kitoblar Soni</h4>
+                        <h3>{{ $count_book }}</h3>
                         <div class="progress mb-2">
                             <div class="progress-bar progress-animated bg-primary" style="width: 80%"></div>
                         </div>

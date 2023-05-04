@@ -8,7 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\admin\BookCategoryCantroller;
-
+use App\Http\Controllers\Admin\BasbetController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,8 +58,12 @@ Route::prefix('admin')->group(function () {
     Route::resource('/category',BookCategoryCantroller::class)
     ->middleware('admin');
 
-    Route::get('message',[ContactsController::class,'get_messages'])->name('all_messages');
-    Route::get('message/delete/{id}',[ContactsController::class,'delete_message'])->name('delete_message');
+    Route::get('message',[ContactsController::class,'get_messages'])
+    ->name('all_messages')
+    ->middleware("admin");
+    Route::get('message/delete/{id}',[ContactsController::class,'delete_message'])
+    ->name('delete_message')
+    ->middleware("admin");
 
     //Yangilik qidirish uchun route
     Route::post('/blog/search/',[BlogController::class,'search'])->name('search-news');
@@ -68,6 +73,10 @@ Route::prefix('admin')->group(function () {
     Route::get('admin/profile/',[AdminController::class,'profile'])->name('admin-profile');
     //Admin malumotlarini update qulivchi route
     Route::post('/user/data/update/{id}',[AdminController::class,'update_user'])->name('update-user');
+    
+    //Admin(boshqa joylarga ham) tarafda bosh sahifaga barcha kitoblarni sonini chiqaruvchi route
+    Route::get("/books/count",[BasbetController::class,'book_count']);
+
 
 });
 
